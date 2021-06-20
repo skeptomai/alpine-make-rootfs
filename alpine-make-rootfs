@@ -114,8 +114,8 @@ readonly VIRTUAL_PKG=".make-$PROGNAME"
 
 : ${APK:="apk"}
 : ${APK_OPTS:="--no-progress"}
-: ${APK_TOOLS_URI:="https://github.com/alpinelinux/apk-tools/releases/download/v2.10.4/apk-tools-2.10.4-x86_64-linux.tar.gz"}
-: ${APK_TOOLS_SHA256:="efe948160317fe78058e207554d0d9195a3dfcc35f77df278d30448d7b3eb892"}
+: ${APK_TOOLS_URI:="https://nl.alpinelinux.org/alpine/latest-stable/main/x86_64/apk-tools-static-2.12.5-r1.apk"}
+: ${APK_TOOLS_SHA256:="cdb419a0391d3bfcc4a284b0094c19da6fd2370105e79b0bac214a296228e856"}
 
 
 # Set pipefail if supported.
@@ -361,7 +361,7 @@ if ! command -v "$APK" >/dev/null; then
 
 	wgets "$APK_TOOLS_URI" "$APK_TOOLS_SHA256" "$TEMP_DIR"
 	tar -C "$TEMP_DIR" -xzf "$TEMP_DIR/${APK_TOOLS_URI##*/}"
-	APK="$(ls "$TEMP_DIR"/apk-tools-*/apk)"
+	APK="$(ls "$TEMP_DIR"/sbin/apk.static)"
 fi
 
 #-----------------------------------------------------------------------
