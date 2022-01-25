@@ -1,0 +1,6 @@
+make: Entering directory '/media/psf/Home/Projects/alpine-make-rootfs'
+test -n ""  # $VERSION
+sed -E -i "s/^(readonly VERSION)=.*/\1=''/" alpine-make-rootfs
+sed -E -i "s/^(:version:).*/\1 /" README.adoc
+make: Leaving directory '/media/psf/Home/Projects/alpine-make-rootfs'
+ 
