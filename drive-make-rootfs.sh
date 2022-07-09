@@ -1,7 +1,7 @@
 set -xe
 sudo ./alpine-make-rootfs \
     --branch v3.8 \
-    --arch aarch64 \
+    --arch "$1" \
     --packages 'ca-certificates openssl curl' \
     --timezone 'America/Los_Angeles' \
     --script-chroot \
