@@ -2,7 +2,7 @@ set -xe
 sudo ./alpine-make-rootfs \
     --branch v3.8 \
     --arch "$1" \
-    --packages 'ca-certificates openssl curl apk-tools build-base tini' \
+    --packages 'ca-certificates openssl curl apk-tools build-base tini iproute2' \
     --timezone 'America/Los_Angeles' \
     --script-chroot \
     example-$(date +%Y%m%d).tar.gz - <<'SHELL'
